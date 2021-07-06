@@ -48,7 +48,7 @@ namespace OOP20_CINEMA_CSHARP.Zirondelli
 
         public DateTime Date
         {
-            get { return this.timeSlot.EndTime; }
+            get { return this.date; }
         }
 
         public override bool Equals(object obj)

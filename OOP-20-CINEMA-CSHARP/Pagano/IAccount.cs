@@ -15,7 +15,7 @@
 		string Password {get;set;}
 
 		/// Returns the account's type. Administrator or operator.
-		TypeAccount Type();
+		TypeAccount type();
 
 	}
 

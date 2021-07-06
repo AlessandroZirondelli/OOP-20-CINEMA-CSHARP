@@ -9,10 +9,10 @@ namespace Pagano
 		private string surname;
 		private string username;
 		private string pass;
-		private readonly TypeAccount type;
+		private TypeAccount type;
 
 		/// Constructor for the class Account.
-		public Account(string name, string surname, string username, string pass, TypeAccount type)
+		public AccountImpl(string name, string surname, string username, string pass, TypeAccount type)
 		{
 			this.name = name; //Unique name
 			this.surname = surname;
@@ -77,43 +77,20 @@ namespace Pagano
 		}
 
 		/// type of the account. Administrator or operator.
-		public TypeAccount Type()
+		public TypeAccount type()
 		{
 			return this.type;
 		}
 
 		public override string ToString()
 		{
-			return "" + this.name + " " + this.surname + " " + this.username;
+			return "Account :" + " Name: " + name + ", Surname: " + surname + ", Username: " + username + ", Type: " + type;
 		}
 
-        public override bool Equals(object obj)
-        {
-            return obj is Account account &&
-                   name == account.name &&
-                   surname == account.surname &&
-                   username == account.username &&
-                   pass == account.pass &&
-                   type == account.type &&
-                   Name == account.Name &&
-                   Surname == account.Surname &&
-                   Username == account.Username &&
-                   Password == account.Password;
-        }
+		public override int GetHashCode()
+		{
+			return HashCode.Combine(name, surname, username, pass, type);
+		}
 
-        public override int GetHashCode()
-        {
-            HashCode hash = new HashCode();
-            hash.Add(name);
-            hash.Add(surname);
-            hash.Add(username);
-            hash.Add(pass);
-            hash.Add(type);
-            hash.Add(Name);
-            hash.Add(Surname);
-            hash.Add(Username);
-            hash.Add(Password);
-            return hash.ToHashCode();
-        }
-    }
+	}
 }

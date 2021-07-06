@@ -1,34 +1,28 @@
-﻿using System.Collections.Generic;
-
-namespace Pagano
+﻿namespace Pagano
 {
 	/// Implements Account model. 
 	public class AccountModel : IAccountModel
 	{
-		private readonly ISet<Account> collect;
+		private readonly Set<Account> collect;
 		private Account accountLogged;
 
 		/// Constructor for the Account Model. 
-		public AccountModel(ISet<Account> setAccount)
+		public AccountModelImpl(Set<Account> setAccount)
 		{
 			this.collect = setAccount;
 		}
 
-        public AccountModel()
-        {
-        }
-
-        public void AddAccount(Account newAccount)
+		public override void AddAccount(Account newAccount)
 		{
 			this.collect.Add(newAccount);
 		}
 
-		public void RemoveAccount(Account oldAccount)
+		public override void RemoveAccount(Account oldAccount)
 		{
-			this.collect.Remove(oldAccount);
+			this.collect.remove(oldAccount);
 		}
 
-		public ISet<Account> Accounts
+		public override Set<Account> Accounts
 		{
 			get
 			{
@@ -41,7 +35,7 @@ namespace Pagano
 			return "Account " + collect;
 		}
 
-		public Account AccountLogged
+		public override Account AccountLogged
 		{
 			get
 			{
