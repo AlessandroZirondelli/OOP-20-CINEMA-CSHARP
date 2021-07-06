@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using OOP20_CINEMA_CSHARP.Zirondelli;
 namespace csharp.LorenzoSansone
 {
 	public interface ITicket
