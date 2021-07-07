@@ -1,4 +1,6 @@
-﻿namespace Pagano
+﻿using System.Collections.Generic;
+
+namespace OOP20_CINEMA_CSHARP.Pagano
 {
 	public interface IAccountModel
 	{
@@ -9,7 +11,7 @@
 		void RemoveAccount(Account oldAccount);
 
 		/// Recover all account from account's set. 
-		Set<Account> Accounts {get;}
+		ISet<Account> GetAccounts();
 
 		/// Account logged in that time.
 		Account AccountLogged {get;set;}
