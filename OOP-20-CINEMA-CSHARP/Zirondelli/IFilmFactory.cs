@@ -7,7 +7,7 @@ namespace OOP_20_CINEMA_CSHARP.Zirondelli
 {
     interface IFilmFactory
     {
-        IFilm createBasicFilm(String name, String genre, String description, string ? coverPath, int duration);
-        IFilm createBasicFilmById(String name, String genre, String description, string? coverPath, int duration, int id);
+        IFilm createBasicFilm(string name, string genre, string description, string  coverPath, int duration);
+        IFilm createBasicFilmById(string name,string genre, string description, string  coverPath, int duration, int id);
     }
 }
