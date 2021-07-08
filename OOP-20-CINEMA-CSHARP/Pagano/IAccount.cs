@@ -1,4 +1,4 @@
-﻿namespace Pagano
+﻿namespace OOP20_CINEMA_CSHARP.Pagano
 {
 	public interface IAccount
 	{
@@ -15,7 +15,7 @@
 		string Password {get;set;}
 
 		/// Returns the account's type. Administrator or operator.
-		TypeAccount type();
+		TypeAccount Type();
 
 	}
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pagano
+namespace OOP20_CINEMA_CSHARP.Pagano
 {
 
 	public class Account : IAccount
@@ -12,13 +12,13 @@ namespace Pagano
 		private TypeAccount type;
 
 		/// Constructor for the class Account.
-		public AccountImpl(string name, string surname, string username, string pass, TypeAccount type)
+		public Account(string name, string surname, string username, string pass, TypeAccount type)
 		{
 			this.name = name; //Unique name
 			this.surname = surname;
 			this.username = username;
 			this.pass = pass;
-			this.type = type;
+		    this.type = type;
 		}
 
 		/// name of the account.
@@ -77,20 +77,43 @@ namespace Pagano
 		}
 
 		/// type of the account. Administrator or operator.
-		public TypeAccount type()
+		public TypeAccount Type()
 		{
 			return this.type;
 		}
 
 		public override string ToString()
 		{
-			return "Account :" + " Name: " + name + ", Surname: " + surname + ", Username: " + username + ", Type: " + type;
+			return "" + this.name + " " + this.surname + " " + this.username;
 		}
 
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(name, surname, username, pass, type);
-		}
+        public override bool Equals(object obj)
+        {
+            return obj is Account account &&
+                   name == account.name &&
+                   surname == account.surname &&
+                   username == account.username &&
+                   pass == account.pass &&
+                   this.type == account.type &&
+                   Name == account.Name &&
+                   Surname == account.Surname &&
+                   Username == account.Username &&
+                   Password == account.Password;
+        }
 
-	}
+        public override int GetHashCode()
+        {
+            HashCode hash = new HashCode();
+            hash.Add(name);
+            hash.Add(surname);
+            hash.Add(username);
+            hash.Add(pass);
+            hash.Add(this.type);
+            hash.Add(Name);
+            hash.Add(Surname);
+            hash.Add(Username);
+            hash.Add(Password);
+            return hash.ToHashCode();
+        }
+    }
 }

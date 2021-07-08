@@ -1,33 +1,32 @@
-﻿namespace Pagano
+﻿using System.Collections.Generic;
+
+namespace OOP20_CINEMA_CSHARP.Pagano
 {
 	/// Implements Account model. 
 	public class AccountModel : IAccountModel
 	{
-		private readonly Set<Account> collect;
+		private readonly ISet<Account> collect;
 		private Account accountLogged;
 
 		/// Constructor for the Account Model. 
-		public AccountModelImpl(Set<Account> setAccount)
+		public AccountModel(ISet<Account> setAccount)
 		{
 			this.collect = setAccount;
 		}
 
-		public override void AddAccount(Account newAccount)
+		public void AddAccount(Account newAccount)
 		{
 			this.collect.Add(newAccount);
 		}
 
-		public override void RemoveAccount(Account oldAccount)
+		public void RemoveAccount(Account oldAccount)
 		{
-			this.collect.remove(oldAccount);
+			this.collect.Remove(oldAccount);
 		}
 
-		public override Set<Account> Accounts
+		public ISet<Account> GetAccounts()
 		{
-			get
-			{
-				return this.collect;
-			}
+			return this.collect;
 		}
 
 		public override string ToString()
@@ -35,7 +34,7 @@
 			return "Account " + collect;
 		}
 
-		public override Account AccountLogged
+		public Account AccountLogged
 		{
 			get
 			{
