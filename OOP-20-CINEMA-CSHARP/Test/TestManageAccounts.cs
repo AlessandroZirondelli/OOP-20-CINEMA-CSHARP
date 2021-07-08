@@ -42,11 +42,7 @@ namespace OOP20_CINEMA_CSHARP.Test
 			IAccount a4 = new Account("Luigi", "Costa", "Lu", "luna21", TypeAccount.ADMINISTRATOR);
 			model.AddAccount((Account)a4);
 
-			
-
-			///setAccount.Add((Account)a4);
 			Assert.Equal(model.GetAccounts(), setAccount);
-			///Assert.True(model.getAccounts().containsAll(ISet<object>.of(a1, a2, a3, a4)));
 		}
 
         [Fact]
@@ -62,9 +58,8 @@ namespace OOP20_CINEMA_CSHARP.Test
 			IAccountModel model = new AccountModel(setAccount);
 			model.RemoveAccount((Account)a1);
 			
-			///setAccount.Remove((Account)a1);
+			
 			Assert.Equal(model.GetAccounts(), setAccount);
-			///Assert.False(model.getAccounts().containsAll(ISet<object>.of(a1, a2)));
 		}
 	}
 
